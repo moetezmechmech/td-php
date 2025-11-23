@@ -87,6 +87,20 @@ export class CoursService {
     return this.sections;
   }
 
+  // Ajouter ou mettre à jour une section
+  ajouterSection(cat: Section): void {
+    if (!cat) return;
+    if (!cat.idCat || cat.idCat === 0) {
+      const maxId = this.sections.length ? Math.max(...this.sections.map(s => s.idCat)) : 0;
+      cat.idCat = maxId + 1;
+      this.sections.push(cat);
+    } else {
+      const idx = this.sections.findIndex(s => s.idCat === cat.idCat);
+      if (idx > -1) this.sections.splice(idx, 1, cat);
+      else this.sections.push(cat);
+    }
+  }
+
   // ✅ Retourner section par ID
   consulterSection(id: number): Section {
     return this.sections.find(sec => sec.idCat == id)!;

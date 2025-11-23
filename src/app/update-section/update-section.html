@@ -1,0 +1,14 @@
+<form>
+    <div [hidden]="ajout"  >
+       <label>ID Section </label>
+       <input type="text" [readOnly]="!ajout" [(ngModel)]="section.idCat" name="idSection" class="form-control w-25">
+    </div>
+    <div>
+      <label>Nom Section </label>
+     <input type="text" [(ngModel)]="section.nomCat" name="nomSection" class="form-control" placeholder="Entrez un nom de section...">
+     </div>
+     <div class="mt-2">
+       <button type="submit" [disabled]="!section.nomCat" class="btn btn-success"     (click)="saveSection()" >{{ajout ? 'Ajouter' : 'Modifier'}}
+</button>
+
+    </div>

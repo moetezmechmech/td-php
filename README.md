@@ -67,3 +67,4 @@ For more information on using the Angular CLI, including detailed command refere
 "# tp66" 
 "# tp9-angulaire" 
 "# td-php" 
+"# angulaire-tp10" 

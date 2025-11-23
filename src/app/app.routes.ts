@@ -9,6 +9,7 @@ import { login } from './login/login';
 import { Cours } from './model/cours.model';
 import { Fobidden } from './forbidden/forbidden';
 import { coursGuard } from './cours-guard';
+import { ListeSection } from './liste-section/liste-section';
 
 
 export const routes: Routes = [
@@ -21,6 +22,7 @@ export const routes: Routes = [
   {path:   "register",component:Register},
   { path: 'cours', component: Cours },
   { path: 'app-forbidden', component: Fobidden },
+  {path: "listeSection", component : ListeSection},
   { path: '', redirectTo: 'cours', pathMatch: 'full' }
 ];
 
